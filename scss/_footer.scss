@@ -1,0 +1,144 @@
+#back-top {
+    position: fixed;
+    right: 30px;
+    bottom: 2rem;
+    width: 48px;
+    height: 48px;
+    background: #74101A;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    user-select: none;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.footer-primary {
+    .logo-footer {
+        img {
+            width: 168px;
+            height: auto;
+        }
+    }
+    
+    .socical-footer {
+        &__item {
+            img {
+                width: 33px;
+                height: auto;
+            }
+        }
+    }
+    .payment-card {
+        img {
+            width: 48px;
+            height: 28px;
+        }
+    }
+    &__top {
+        .item-text {
+            a {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }   
+    }
+    &__bot {
+        color: #6b7280;
+        p + p {
+            margin-top: 2px;
+        }
+    }
+}
+
+.footer-action,
+.footer-action-mb {
+    position: fixed;
+    z-index: 1000;
+}
+.ripple-effect .pulse,
+.ripple-effect .pulse-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.footer-action {
+    right: 30px;
+    bottom: 110px;
+}
+
+.ripple-effect {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: block;
+}
+.ripple-effect .pulse {
+    width: 56px;
+    height: 56px;
+    /* background-color: #e14143; */
+    background-color: #74101A;
+    animation: 1.5s infinite pulse-animation;
+}
+.ripple-effect .pulse:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.ripple-effect .pulse:nth-child(3) {
+    animation-delay: 1s;
+}
+.ripple-effect .pulse-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 0.8s infinite shake;
+}
+.message-footer .ripple-effect .pulse {
+    /* background-color: #a109ff; */
+    background-color: #74101A;
+}
+.zalo-footer .ripple-effect .pulse {
+    /* background-color: #2370d1; */
+    background-color: #74101A;
+}
+@keyframes pulse-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes shake {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    25% {
+        transform: translate(-50%, -50%) rotate(-15deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(15deg);
+    }
+    75% {
+        transform: translate(-50%, -50%) rotate(-10deg);
+    }
+}

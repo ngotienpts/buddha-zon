@@ -1,0 +1,223 @@
+
+.ads-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ads-right {
+    img {
+        width: 100%;
+    }
+}
+
+.pagi-red {
+    .swiper-pagination-bullet {
+        background: #e0e0e0;
+        width: 20px;
+        height: 4px;
+        border-radius: 0;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        background: #c65c31;
+        
+    }
+}
+
+
+.same-height {
+    .swiper-wrapper {
+        display: flex;
+    }
+
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+    }
+
+    .article {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .article-img {
+        flex-shrink: 0;
+    }
+
+    .article-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.hidden.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+/*-----------------------------------------*/
+.block-primary {
+    display: flex;
+
+    &__left {
+        flex-shrink: 0;
+        max-width: 280px;
+        width: 100%;
+    }
+    &__right {
+        flex: 1;
+        padding-left: 32px;
+        max-width: calc(100% - 280px);
+        width: 100%;
+    }
+}
+/*-----------------------------------------*/
+.heading-primary {}
+.heading-secondary {
+    padding-left: 16px;
+    border-left: 2px solid #a60e1d;
+}
+/*-----------------------------------------*/
+.section-primary {
+    margin-top: -93px;
+
+    &__slide {
+        img {
+            height: 720px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: white;
+            background-color: rgba(0, 0, 0, .3);
+            width: 56px;
+            height: 64px;
+            top: 55%;
+            transform: translateY(-50%);
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+        }
+        .swiper-button-prev {
+            left: 0;
+            border-radius: 0 32px 32px 0;
+            padding-right: 12px;
+        }
+        .swiper-button-next {
+            right: 0;
+            border-radius: 32px 0 0 32px;
+            padding-left: 12px;
+        }
+        .swiper-button-prev:after, 
+        .swiper-rtl .swiper-button-next:after,
+        .swiper-button-next:after, 
+        .swiper-rtl .swiper-button-prev:after {
+            font-size: 20px;
+        }
+        .swiper-pagination-bullet {
+            width: 80px;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, .4);
+        }
+        .swiper-pagination-bullet-active {
+            background: #fff;
+        }
+    }
+
+}
+
+.section-secondary {
+    &__partners {
+        .partner-item {
+            padding: 12px 20px;
+            img {
+                width: 142px;
+                height: 48px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.section-tertiary {
+    &:nth-child(even of .section-tertiary) {
+        background-color: #fff;
+    }
+    &__content {
+        .article-list {
+            .article {
+                &-img {
+                    position: relative;
+                }
+            }
+            .add-cart {
+                position: absolute;
+                bottom: 8px;
+                right: 8px;
+                width: 36px;
+                height: 36px;
+                border-radius: 999px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                padding: 8px;
+
+                &:hover {
+                    background-color: #f5f5f5;
+                }
+            }
+
+            .new-price {
+                &__discount {
+                    padding: 0 4px;
+                    margin-left: 4px;
+                    background-color: #fff1f2;
+                }
+            }
+        }
+    }
+}
+.section-quinary {
+    &__content {
+        .article-content {
+            position: relative;
+            margin-left: -82px;
+            max-height: 550px;
+            overflow: auto;
+        }
+    }
+}
+.section-senary {
+    &__slide {
+        .article-content {
+            margin-top: -32px;
+            position: relative;
+        }
+        .article-avatar {
+            img {
+                width: 48px;
+                height: 48px;
+                border-radius: 999px;
+            }
+        }
+    }
+}
+/*-----------------------------------------*/
+
+/*-----------------------------------------*/
+
+/*-----------------------------------------*/
+
+/*-----------------------------------------*/
+
+/*-----------------------------------------*/
