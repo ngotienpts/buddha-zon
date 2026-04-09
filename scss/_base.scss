@@ -82,6 +82,7 @@ input[type=number] {
         text-decoration: underline;
     }
 }
+
 img {
     display: block;
     max-width: 100%;
@@ -195,6 +196,9 @@ p {
 }
 .w-72 {
     width: 72%;
+}
+.w-32px {
+    width: 32px;
 }
 .w-100px {
     width: 100px;
@@ -477,12 +481,17 @@ p {
 .text-gray-9ca {
     color: #9ca3af;
 }
-
+.text-gray-600 {
+    color: #4b5563;
+}
 .text-red-74 {
     color: #74101a;
 }
 .text-red-ef {
     color: #ef1329;
+}
+.text-orange-e1 {
+    color: #e17100;
 }
 
 
@@ -1016,6 +1025,9 @@ p {
 .p-48 {
     padding: 48px;
 }
+.pl-48 {
+    padding-left: 48px;
+}
 /*=================================================================*/
 .pt-64 {
     padding-top: 64px;
@@ -1153,6 +1165,9 @@ p {
     text-align: left;
 }
 .text-italic {
+    font-style: italic;
+}
+.italic {
     font-style: italic;
 }
 
@@ -1295,6 +1310,9 @@ p {
 .text-through {
     text-decoration: line-through;
 }
+.text-underline {
+    text-decoration: underline;
+}
 .shadow {
     box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.1)
 }
@@ -1404,6 +1422,9 @@ p {
 }
 .border-t-ff {
     border-top: 1px solid #ffdfe2;
+}
+.border-b-e5 {
+    border-bottom: 1px solid #e5e5e5;
 }
 
                                                                                                                                                  

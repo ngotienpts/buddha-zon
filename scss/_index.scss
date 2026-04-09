@@ -1,4 +1,9 @@
-
+.main {
+    position: relative;
+}
+.header {
+    z-index: 101;
+}
 .ads-center {
     display: flex;
     align-items: center;

@@ -94,37 +94,78 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
     // xử lý sự kiện show popup
-    function handleShowPopup() {
+   function handleShowPopup() {
         const popPrimaryContainers = document.querySelectorAll('.js__popPrimaryContainer');
+        const mainElement = document.querySelector('main'); // Lấy thẻ main
+        const body = document.body;
+
         if (popPrimaryContainers.length === 0) return;
 
         popPrimaryContainers.forEach((popPrimaryContainer) => {
-
             const showPopupPrimary = popPrimaryContainer.querySelector('.js__showPopupPrimary');
             const closePopupPrimary = popPrimaryContainer.querySelector('.js__closePopupPrimary');
             const overlay = popPrimaryContainer.querySelector('.js__overlay');
-            const body = document.body;
-    
+
+            // Hàm hỗ trợ đóng popup để tránh lặp lại code
+            const closePopup = () => {
+                popPrimaryContainer.classList.remove('active');
+                body.style.overflow = '';
+                if (mainElement) mainElement.style.zIndex = ''; // Reset z-index
+            };
+
             showPopupPrimary.onclick = function() {
-                popPrimaryContainer.classList.toggle('active')
-                overlay.classList.add('active')
-                if (popPrimaryContainer.classList.contains('active')) {
+                const isActive = popPrimaryContainer.classList.toggle('active');
+                overlay.classList.add('active');
+
+                if (isActive) {
                     body.style.overflow = 'hidden';
+                    if (mainElement) mainElement.style.zIndex = '100'; // Thêm z-index khi active
                 } else {
                     body.style.overflow = '';
+                    if (mainElement) mainElement.style.zIndex = ''; // Reset khi bỏ active
                 }
             }
-            closePopupPrimary.onclick = function() {
-                popPrimaryContainer.classList.remove('active')
-                body.style.overflow = '';
-            }
-            overlay.onclick = function() {
-                popPrimaryContainer.classList.remove('active')
-                body.style.overflow = '';
-            }
-            
-        } )
 
+            closePopupPrimary.onclick = closePopup;
+            overlay.onclick = closePopup;
+        });
+    }
+    // xử lý sự kiện show popup
+   function handleShowPopupSecondary() {
+        const popSecondaryContainers = document.querySelectorAll('.js__popSecondaryContainer');
+        const mainElement = document.querySelector('main'); // Lấy thẻ main
+        const body = document.body;
+
+        if (popSecondaryContainers.length === 0) return;
+
+        popSecondaryContainers.forEach((popSecondaryContainer) => {
+            const showPopupSecondary = popSecondaryContainer.querySelector('.js__showPopupSecondary');
+            const closePopupSecondary = popSecondaryContainer.querySelector('.js__closePopupSecondary');
+            const overlay = popSecondaryContainer.querySelector('.js__overlay');
+
+            // Hàm hỗ trợ đóng popup để tránh lặp lại code
+            const closePopup = () => {
+                popSecondaryContainer.classList.remove('active');
+                body.style.overflow = '';
+                if (mainElement) mainElement.style.zIndex = ''; // Reset z-index
+            };
+
+            showPopupSecondary.onclick = function() {
+                const isActive = popSecondaryContainer.classList.toggle('active');
+                overlay.classList.add('active');
+
+                if (isActive) {
+                    body.style.overflow = 'hidden';
+                    if (mainElement) mainElement.style.zIndex = '102'; // Thêm z-index khi active
+                } else {
+                    body.style.overflow = '';
+                    if (mainElement) mainElement.style.zIndex = ''; // Reset khi bỏ active
+                }
+            }
+
+            closePopupSecondary.onclick = closePopup;
+            overlay.onclick = closePopup;
+        });
     }
 
      // xử lý sự kiện active
@@ -157,27 +198,50 @@ document.addEventListener("DOMContentLoaded", function () {
     }
      // xử lý sự kiện active
     function handleActiveElementSecondary() {
-    const containers = document.querySelectorAll('.js__activeElementSecondary');
+        const containers = document.querySelectorAll('.js__activeElementSecondary');
 
-    containers.forEach((container) => {
-        container.addEventListener('click', (e) => {
-           
-            const item = e.target.closest('.js__activeElementSecondaryItems');
+        containers.forEach((container) => {
+            container.addEventListener('click', (e) => {
             
-            if (!item) return;
+                const item = e.target.closest('.js__activeElementSecondaryItems');
+                
+                if (!item) return;
 
-            const items = container.querySelectorAll('.js__activeElementSecondaryItems');
+                const items = container.querySelectorAll('.js__activeElementSecondaryItems');
 
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
-            } else {
-               
-                items.forEach(el => el.classList.remove('active'));
-                item.classList.add('active');
-            }
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                } else {
+                
+                    items.forEach(el => el.classList.remove('active'));
+                    item.classList.add('active');
+                }
+            });
         });
-    });
-}
+    }
+
+    // xử lý sự kiện active
+    function handleActiveElementTertiary() {
+        const activeContainers = document.querySelectorAll('.js__activeContainer')
+        if (activeContainers.length === 0) return;
+        
+        
+        activeContainers.forEach((activeContainer)=>{
+            
+            const activeElements = activeContainer.querySelectorAll('.js__activeItem')
+            
+            if (activeElements.length === 0) return;
+
+            activeElements.forEach((activeElement)=>{
+
+                activeElement.onclick = function() {
+                    activeContainer.querySelector('.js__activeItem.active').classList.remove('active')
+                    this.classList.add('active');
+                }
+            })
+           
+        })
+    }
 
     // xử lý sự kiện show search pc
     function handleShowSearchPc() {
@@ -547,6 +611,58 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
+
+    // khởi tạo slider gallery picture
+    function initSliderGalleryPictureItems() {
+        const gallerryPictures = document.querySelectorAll(
+            ".js__swiperGalleryContainerPicture"
+        );
+        gallerryPictures.forEach((item) => {
+            var sliderLarge = item.querySelector(".js__swiperGalleryLarge");
+            var sliderSmall = item.querySelector(".js__swiperGallerySmall");
+            var next = item.querySelector(".swiper-button-next");
+            var prev = item.querySelector(".swiper-button-prev");
+
+            var small = new Swiper(sliderSmall, {
+                spaceBetween: 15,
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+                freeMode: true,
+                watchSlidesProgress: true,
+                breakpoints: {
+                    640: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 15,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                    1200: {
+                        slidesPerView: 5,
+                        spaceBetween: 20,
+                    },
+                },
+            });
+            var large = new Swiper(sliderLarge, {
+                spaceBetween: 10,
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                navigation: {
+                    nextEl: next || null,
+                    prevEl: prev || null,
+                },
+                thumbs: {
+                    swiper: small,
+                },
+            });
+
+        });
+    }
   
 
     // Xử lý thanh header dính
@@ -601,14 +717,17 @@ document.addEventListener("DOMContentLoaded", function () {
         handleChangeTab();
         initFancybox();
         handleShowPopup();
+        handleShowPopupSecondary();
         handleIncremental();
         handleActiveElement();
         handleActiveElementSecondary();
+        handleActiveElementTertiary();
         initFilterBox();
         // initStickyContent();
         // slide
         initSliderOneItems();
         initSliderSixItems();
+        initSliderGalleryPictureItems();
         // scroll
         window.addEventListener('scroll',handleWindowScroll);
         window.addEventListener('resize',handleWindowScroll);
