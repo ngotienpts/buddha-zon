@@ -80,6 +80,32 @@
     }
 }
 /*-----------------------------------------*/
+.add-cart-primary {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 8px;
+
+    &:hover {
+        background-color: #f5f5f5;
+    }
+}
+
+.new-price {
+    &__discount {
+        padding: 0 4px;
+        margin-left: 4px;
+        background-color: #fff1f2;
+    }
+}
+/*-----------------------------------------*/
 .heading-primary {}
 .heading-secondary {
     padding-left: 16px;

@@ -240,6 +240,48 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // xử lý sự kiện thay đổi select box
+    function initFilterBox() {
+        const filterBoxSelect = document.querySelector('.js__filterBoxSelect');
+        const filterDefault = document.querySelector('.js__filterBoxDefault');
+        const filterDefaultText = document.querySelector('.js__filterBoxDefaultText span');
+        const filterItems = document.querySelectorAll('.js__filterBoxItem');
+
+        if (!filterBoxSelect || !filterDefault) return;
+
+        // 1. Click vào mặc định để đóng/mở dropdown
+        filterDefault.addEventListener('click', function (e) {
+            e.stopPropagation(); // Ngăn chặn sự kiện nổi bọt
+            filterBoxSelect.classList.toggle('active');
+        });
+
+        // 2. Click vào từng item bên dưới
+        filterItems.forEach(item => {
+            item.addEventListener('click', function () {
+                // Lấy text của item được click
+                const selectedText = this.querySelector('.select-item__title').innerText;
+
+                // Cập nhật text cho phần hiển thị mặc định
+                if (filterDefaultText) {
+                    filterDefaultText.innerText = selectedText;
+                }
+
+                // Xóa class active ở tất cả các items và thêm vào item hiện tại
+                filterItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                // Đóng dropdown sau khi chọn xong
+                filterBoxSelect.classList.remove('active');
+            });
+        });
+
+        // 3. Click ra ngoài để đóng dropdown (UX tốt hơn)
+        document.addEventListener('click', function () {
+            filterBoxSelect.classList.remove('active');
+        });
+    }
+
+
 
     // Khởi tạo fancybox
     function initFancybox() {
@@ -562,6 +604,7 @@ document.addEventListener("DOMContentLoaded", function () {
         handleIncremental();
         handleActiveElement();
         handleActiveElementSecondary();
+        initFilterBox();
         // initStickyContent();
         // slide
         initSliderOneItems();

@@ -180,6 +180,10 @@
         gap: 1rem;
     }
     /*-----------------------------------*/
+    .justify-md-start {
+        justify-content: flex-start;
+    }
+    /*-----------------------------------*/
     .pt-md-0 {
         padding-top: 0;
     }
@@ -218,6 +222,9 @@
         margin-top: 40px;
     }
     /*-----------------------------------*/
+    .fs-md-16 {
+        font-size: 16px;
+    }
     .fs-md-24 {
         font-size: 24px;
     }
@@ -300,6 +307,13 @@
 
 
     // --------------------------------------------------------------------cate
+    .breadcrumb-primary {
+        &__list {
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            overflow: auto;
+        }
+    }
     .cate-primary {
         
         &__container {
