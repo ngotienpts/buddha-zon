@@ -354,6 +354,20 @@
             }
         }
     }
+    .checkout-primary {
+        &__left {
+            background-color: transparent;
+            padding: 15px 0;
+            box-shadow: none;
+            margin-right: 0;
+        }
+        &__right {
+            background-color: transparent;
+            padding: 15px 0;
+            box-shadow: none;
+        }
+
+    }
  
     // --------------------------------------------------------------------detail
     .detail-tags {
