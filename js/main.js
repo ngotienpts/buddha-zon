@@ -698,7 +698,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleStickyHeader() {
         const stickyHeaderPC = document.querySelector(".js__stickyHeader");
         if (stickyHeaderPC) {
-            const isSticky = scrollY > 300;
+            const isSticky = scrollY > 600;
             stickyHeaderPC.classList.toggle("sticky", isSticky);
         }
     }
