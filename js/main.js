@@ -167,6 +167,35 @@ document.addEventListener("DOMContentLoaded", function () {
             overlay.onclick = closePopup;
         });
     }
+     // xử lý sự kiện collapse
+    function handleCollapse () {
+
+        const collapseContainers = document.querySelectorAll('.js__collapseContainer')
+        if (collapseContainers.length === 0) return;
+        
+        let activeItem = null;
+        
+        collapseContainers.forEach((collapseContainer)=>{
+            const collapses = collapseContainer.querySelector('.js__collapse')
+            collapses.onclick = function() {
+                // khi item đang mở
+                if (activeItem === collapseContainer) {
+                    collapseContainer.classList.remove('active'); 
+                    activeItem = null; 
+                } else {
+                    // khi không có item nào mở
+                    if (activeItem) {
+                        activeItem.classList.remove('active');
+                    }
+                    collapseContainer.classList.add('active');
+                    activeItem = collapseContainer; 
+                    
+                }  
+                 
+            }
+           
+        })
+    }
 
      // xử lý sự kiện active
     function handleActiveElement() {
@@ -723,6 +752,7 @@ document.addEventListener("DOMContentLoaded", function () {
         handleActiveElementSecondary();
         handleActiveElementTertiary();
         initFilterBox();
+        handleCollapse();
         // initStickyContent();
         // slide
         initSliderOneItems();

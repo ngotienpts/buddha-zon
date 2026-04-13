@@ -342,6 +342,18 @@
         }
 
     }
+    .cate-box-four {
+        &__list {
+            display: none;
+            margin-top: 10px;
+        }
+
+        &.active {
+            .cate-box-four__list {
+                display: block;
+            }
+        }
+    }
  
     // --------------------------------------------------------------------detail
     .detail-tags {
@@ -425,6 +437,13 @@
     }
     .mt-sm-0 {
         margin-top: 0;
+    }
+    .p-sm-8 {
+        padding: 8px;
+    }
+    .py-sm-8 {
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
     .pt-sm-50 {
         padding-top: 50px;

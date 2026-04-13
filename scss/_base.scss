@@ -123,7 +123,8 @@ p {
 .font-arial {
     font-family: "Arial", sans-serif;
 }
-.font-noto-serif {
+.font-noto-serif,
+.font-semibold {
     font-family: "Noto Serif", serif;
 }
 
@@ -202,6 +203,9 @@ p {
 }
 .w-100px {
     width: 100px;
+}
+.w-410px {
+    width: 410px;
 }
 .w-1-4 {
     width: calc(calc(100% / 4) - 12px);
@@ -489,6 +493,9 @@ p {
 }
 .text-red-ef {
     color: #ef1329;
+}
+.text-red-dc {
+    color: #dc2626;
 }
 .text-orange-e1 {
     color: #e17100;
@@ -1422,6 +1429,9 @@ p {
 }
 .border-t-ff {
     border-top: 1px solid #ffdfe2;
+}
+.border-e5 {
+    border: 1px solid #e5e5e5;
 }
 .border-b-e5 {
     border-bottom: 1px solid #e5e5e5;

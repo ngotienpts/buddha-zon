@@ -62,6 +62,9 @@
 
 
 .detail-content {
+     & * {
+        all: revert !important;
+    }
     & figure {
         margin-bottom: 1.25rem;
 
@@ -138,16 +141,16 @@
         font-weight: 300;
         
     }
-
-    & p a {
-        color: #a60e1d;
-        font-style: italic;
+    a {
+        color: #0066cc !important;
+        // font-style: italic;
         text-decoration: underline;
         
         &:hover {
-            text-decoration: underline;
+            text-decoration: unset;
         }
     }
+    
     & p,
     & li,
     & span {
@@ -161,6 +164,7 @@
     }
     span {
         display: inline-block !important;
+        margin-bottom: 0;
     }
     p span {
         margin-bottom: 0;
@@ -178,27 +182,39 @@
             list-style: circle;
         }
     }
+    & hr {
+        margin: 1.5rem 0 !important;
+        border: 0 !important;
+        border-top: 1px solid #eee !important;
+    }
+    & strong {
+        font-weight: bold;
+
+        span {
+            font-weight: bold !important;
+        }
+    }
     &  h2,
     &  h3,
     &  h4,
     &  h5,
     &  h6 {
-        font-weight: 600;
+        font-weight: bold;
         margin-bottom: 15px;
         
         color: #32383e;
     }
     &  h2 {
-        font-size: 16px;
+        font-size: 18px;
     }
     &  h3 {
-        font-size: 16px;
+        font-size: 17px;
     }
     &  h4 {
         font-size: 16px;
     }
     &  h5 {
-        font-size: 16px;
+        font-size: 15px;
     }
     &  h6 {
         font-size: 16px;
@@ -233,38 +249,40 @@
             color: #a60e1d;
         }
     }
-
+    
     table {
-        width: 100%;
-        margin: 20px 0;
-        background: #fff;
-        overflow: hidden;
-        text-indent: 0;
-        border-color: inherit;
-        border-collapse: collapse;
-        border: 1px solid #e5e7eb;
+        width: 100% !important;
+        margin: 20px 0 !important;
+        background: #fff !important;
+        overflow: hidden !important;
+        text-indent: 0 !important;
+        border-color: inherit !important;
+        border-collapse: collapse !important;
+        border: 1px solid #e5e7eb !important;
         tr {
-            border: 1px solid #e5e7eb;
+            border: 1px solid #e5e7eb !important;
         }
         th {
-            padding: 4px 8px;
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid #e5e7eb;
+            padding: 8px !important;
+            font-size: 14px !important;
+            font-weight: bold !important;
+            border: 1px solid #e5e7eb !important;
+            background-color: #f5f5f5 !important;
             strong {
                 color: #a60e1d;
             }
         }
         td {
-            padding: 4px 8px;
-            font-size: 14px;
-            border: 1px solid #e5e7eb;
-            text-align: left;
+            padding: 8px !important;
+            font-size: 14px !important;
+            border: 1px solid #e5e7eb !important;
+            text-align: left !important;
             strong {
                 color: #a60e1d;
             }
         }
     }
+   
 
 }
 
