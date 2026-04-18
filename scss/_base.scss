@@ -142,6 +142,10 @@ p {
     max-width: 1280px;
     margin: 0 auto;
 }
+.w-850 {
+    max-width: 850px;
+    margin: 0 auto;
+}
 
 .w-14 {
     width: 14%;
@@ -200,6 +204,9 @@ p {
 }
 .w-32px {
     width: 32px;
+}
+.w-48px {
+    width: 48px;
 }
 .w-80px {
     width: 80px;
@@ -475,6 +482,9 @@ p {
 .text-gray-323 {
     color: #32383e;
 }
+.text-gray-3741 {
+    color: #374151;
+}
 .text-gray-40 {
     color: #404040;
 }
@@ -483,6 +493,9 @@ p {
 }
 .text-gray-73 {
     color: #737373;
+}
+.text-gray-fa {
+    color: #fafafa;
 }
 
 .text-gray-9e {
@@ -529,6 +542,9 @@ p {
 }
 .bg-red-60 {
     background-color: #601e1e;
+}
+.bg-red-74 {
+    background-color: #74101a;
 }
 
 
@@ -1510,6 +1526,18 @@ p {
         opacity: 1;
         visibility: visible;
         z-index: 99;
+    }
+
+    &-2 {
+        width: 100vw !important;
+        height: 100vh !important;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        &.active {
+            z-index: 100;
+        }
     }
 }
 

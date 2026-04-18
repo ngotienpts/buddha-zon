@@ -368,6 +368,63 @@
         }
 
     }
+    // --------------------------------------------------------------------order history
+    .order-history-primary {
+        .right-content {
+            &__tab {
+                overflow: auto;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+                
+            }
+        }
+    }
+    .status-order {
+        margin-left: auto;
+    }
+    .history-status {
+        &__item {
+            flex-direction: row;
+            margin-bottom: 20px;
+
+            &::before {
+                top: 32px;
+                right: auto;
+                left: 16px;
+                width: 1px;
+                height: 100%;
+                background: linear-gradient(to bottom, #ccc 50%, #ffffff00 50%) 0 0/1px 4px repeat-y;
+
+            }
+
+            &.active {
+                &::before {
+                    background: linear-gradient(to bottom, #7a0d1e 50%, #ffffff00 50%) 0 0/1px 4px repeat-y;
+                }
+            }
+
+        }
+
+        &__icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        &__text {
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            p + p {
+                margin-top: 0;
+            }
+
+            .text-2 {
+                margin-left: 10px;
+            }
+        }
+
+    }
+        
  
     // --------------------------------------------------------------------detail
     .detail-tags {
@@ -537,6 +594,19 @@
             }
         }
     }
+    .side-right-secondary {
+        &__inner {
+            // margin-top: 40%;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            transform: translateY(100%);
+        }
+        &.active {
+            .side-right-secondary__inner {
+                transform: translateY(0);
+            }
+        }
+    }
 
     // --------------------------------------------------------------------index
     .section-primary {
@@ -668,6 +738,12 @@
 
 }
 
+// max-width: 480px và max-height:700px
+@media (max-width:480px) and (max-height:700px) {
+    .checkout-primary .cart-content {
+        max-height: calc(100vh - 290px);
+    }
+}
 // max-width: 400px
 @media (max-width:400px) {
     // --------------------------------------------------------------------header
